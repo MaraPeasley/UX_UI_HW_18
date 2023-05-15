@@ -26,6 +26,13 @@ header {
         padding-left: 1em;
         text-transform: uppercase;
         font-family: 'Inter', sans-serif;
+        transition: all ease 500ms;
+        &:hover {
+            //font-style: italic;
+            letter-spacing: .25em;
+            //transform: rotate(-5deg);
+            transition: all ease 500ms;
+        }
     }
 
     h1 {
@@ -42,12 +49,40 @@ header {
         text-transform: uppercase;
         font-family: 'Inter', sans-serif;
         font-size: .85em;
+        transition: all ease 500ms;
+        &:hover {
+            //font-style: italic;
+            letter-spacing: .2em;
+            //transform: rotate(5deg);
+            transition: all ease 500ms;
+        }
     }
 }
 
 main {
     background-color: @greyColor2;
-    button {
+    a {
+        position: relative;
+        z-index: 100;
+        display: block;
+        margin: 2em auto 8em auto;
+        width: 60%;
+        font-family: 'Inter', sans-serif;
+        color: @lightColor;
+        background-color: @greyColor6;
+        text-align: center;
+        padding: .25em;
+        transition: ease 300ms;
+        &:hover {
+            color: @darkColor;
+            background-color: @greyColor2;
+            transition: ease 400ms;
+        }
+    }
+    .button {
+        width: 60%;
+        /*position: relative;
+        z-index: 100;
         display: block;
         margin: 2em auto 8em auto;
         width: 60%;
@@ -57,8 +92,14 @@ main {
         background-color: @greyColor6;
         border: none;
         cursor: pointer;
+        a {
+            color: @lightColor;
+        }
+        a:visited {
+            color: @lightColor;
+        }*/
     }
-    section:first-child {
+    section.herosection {
         background-color: @greyColor4;
         margin-bottom: -.75em;
         img {
@@ -88,6 +129,109 @@ main {
                 font-size: .5em;
             }
         }
+    }
+    section.summaryheader {
+        background-color: @greyColor4;
+        padding-bottom: 2em;
+        margin-bottom: 16em;
+        h2 {
+            padding: 1.5em 0 0 1em;
+            font-size: 1em;
+        }
+        p {
+            font-size: .75em;
+            padding: 1.75em 0 0 2em;
+            width: 60%;
+            font-family: 'Inter', sans-serif;
+        }
+        img {
+            position: absolute;
+            top: 117px;
+            right: -280px;
+            transform: rotate(5deg);
+            scale: 1.25;
+        }
+        div.detailscard {
+            background-color: @greyColor1;
+            width: 75%;
+            //margin: 1.5em auto;
+            padding: 1em 1.5em;
+            position: absolute;
+            left: 73px;
+            top: 460px;
+            h5 {
+                text-transform: uppercase;
+                font-family: 'Inter', sans-serif;
+            }
+            p {
+                padding: .25em 0 2em 0;
+            }
+            ul {
+                font-family: 'Inter', sans-serif;
+                display: inline-block;
+                list-style-type: disc;
+                padding-left: 1em;
+                font-size: .75em;
+            }
+        }
+    }
+    section.imgcenter {
+        margin-top: 4em;
+        h3 {
+            width: 85%;
+            margin: 0 auto;
+            font-size: 1em;
+        }
+        p {
+            font-size: .75em;
+            width: 85%;
+            margin: 1em auto 1em 2em;
+            font-family: 'Inter', sans-serif;
+        }
+        img {
+            width: 85%;
+            margin: 0 auto 2em auto;
+            display: block;
+        }
+    }
+    section.commentsection {
+        font-family: 'Inter', sans-serif;
+        margin: 5em auto;
+        text-align: center;
+        q {
+            display: block;
+            width: 85%;
+            margin: auto;
+            text-align: center;
+            padding-top: 1em;
+        }
+        p {
+            font-size: .75em;
+            opacity: .5;
+            padding-top: 1em;
+        }
+        div {
+            height: 4px;
+            background: @greyColor3;
+            width: 30%;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        img {
+            display: inline-block;
+            vertical-align: middle;
+            opacity: .25;
+        }
+        /*q::before {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            content: open-quote;
+        }
+        q::after {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5em;
+            content: close-quote;
+        }*/
     }
 
     section.polaroidright {
@@ -220,15 +364,12 @@ main {
     .study-content {
         width: 100%;
         opacity: 1;
+        height: 10px;
+        transition: all ease 500ms;
     }
     .study-visual {
-        //position: absolute;
-        //top: -68px;
         margin: -2em auto;
         text-align: center;
-        //left: 28px;
-        //transition: width 300ms ease;
-        //display: block;
         img {
             margin-top: -2em;
         }
@@ -236,7 +377,7 @@ main {
     .study-content {
         position: absolute;
         opacity: 0;
-        transition: width 100ms ease;
+        transition: all ease 200ms;
         font-family: 'Inter', sans-serif;
         padding: 1.5em;
         .casestudytitle {
@@ -260,9 +401,11 @@ main {
     }
     .casestudy:hover .study-content {
         opacity: 1;
+        transition: all ease 500ms;
     }
     .casestudy:hover .study-visual {
         opacity: 0;
+        transition: all ease 500ms;
         //transform: scale(.5);
         //transform-origin: center center;
     }
@@ -282,15 +425,20 @@ main {
             font-size: 1.5em;
             line-height: 1.35em;
         }
-        button {
+        a {
             display: block;
             margin: 0 auto;
             width: 60%;
-            height: 35px;
-            border: none;
             background-color: @greyColor6;
             color: @lightColor;
             font-family: 'Inter', sans-serif;
+            text-align: center;
+            padding: .5em;
+            transition: ease 400ms;
+            &:hover {
+                background-color: @darkColor;
+                transition: ease 500ms;
+            }
         }
         p {
             font-size: .65em;
@@ -369,10 +517,13 @@ The following CSS affects all screen sizes larger than 480 pixels wide.
     }
 
     main {
-        button {
-            width: 30%;
+        a {
+            width: 50%;
         }
-        section:first-child {
+        .button {
+            width: 50%;
+        }
+        section.herosection {
             img {
                 width: 52%;
                 padding: 1em;
@@ -384,6 +535,62 @@ The following CSS affects all screen sizes larger than 480 pixels wide.
                 padding: 1.5em;
             }
         }
+        section.summaryheader {
+            padding-bottom: 5em;
+            margin-bottom: 14em;
+            img {
+                top: 224px;
+                right: -325px;
+                scale: 1.5;
+            }
+            h2 {
+                font-size: 1.5em;
+                padding-left: .5em;
+                line-height: 1.5em;
+            }
+            p {
+                font-size: .85em;
+                padding-left: 1em;
+                padding-right: 1em;
+            }
+            div {
+                margin: 0 auto 0 5em;
+                width: 80%;
+                overflow: visible;
+            }
+            div.detailscard {
+                width: 35%;
+                top: 390px;
+                left: 20px;
+            }
+        }
+        section.imgcenter {
+            h3 {
+                font-size: 1.5em;
+                padding-left: .5em;
+                padding-right: 4em;
+                line-height: 1.5em;
+                margin-bottom: 1em;
+            }
+            p {
+                font-size: .85em;
+                padding-left: 3em;
+                padding-right: 4em;
+                margin-bottom: 2em;
+            }
+            div {
+                margin: 0 auto 0 5em;
+                width: 80%;
+                overflow: visible;
+            }
+        }
+        section.commentsection {
+            q {
+                width: 70%;
+                font-size: 1.25em;
+            }
+        }
+
         section.imgleft {
             img {
                 width: 35%;
@@ -413,9 +620,6 @@ The following CSS affects all screen sizes larger than 480 pixels wide.
             }
         }
         section.needcreative {
-            button {
-                width: 35%;
-            }
             p {
                 font-size: .65em;
                 font-family: 'Inter', sans-serif;
@@ -445,7 +649,7 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
 
 @media only screen and (min-width: 1025px) {
     main {
-        section:first-child {
+        section.herosection {
             img {
                 width: 34%;
             }
@@ -460,6 +664,36 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
                 left: 170px;
             }
         }
+
+        section.summaryheader {
+            img {
+                top: 190px;
+                right: -145px;
+                scale: 1.35;
+            }
+            div.detailscard {
+                width: 30%;
+                top: 315px;
+                left: 15px;
+            }
+        }
+        section.imgcenter {
+            div {
+                width: 80%;
+            }
+        }
+        
+        section.commentsection {
+            q {
+                width: 50%;
+                font-size: 1.25em;
+                line-height: 1.5em;
+            }
+            img {
+                width: 6%;
+            }
+        }
+
         section.imgleft {
             position: relative;
             //overflow: hidden;
@@ -523,12 +757,16 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
             margin-bottom: 3em;
         }
         section.needcreative {
+            margin-bottom: 2em;
             h4 {
-                font-size: 2.5em;
+                font-size: 2em;
                 padding-top: 2em;
             }
             p {
                 margin-top: 1em;
+            }
+            a {
+                width: 35%;
             }
         }
     }
@@ -598,7 +836,7 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
         img {
             width: 100%;
         }
-        section:first-child {
+        section.herosection {
             img {
                 width: 25%;
             }
@@ -627,6 +865,51 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
                 font-size: 1.5em;
             }
         }
+
+        section.summaryheader {
+            overflow: hidden;
+            margin-bottom: 20em;
+            img {
+                right: -330px;
+                top: -190px;
+                scale: .43;
+            }
+            div {
+                width: 75%;
+            }
+            h2 {
+                font-size: 2em;
+                padding-left: 5.5em;
+            }
+            p {
+                padding-left: 13em;
+                padding-right: 8em;
+            }
+            div.detailscard {
+                width: 17%;
+                left: 200px;
+                top: 325px;
+                padding: 1.75em 2.5em;
+            }
+        }
+        section.imgcenter {
+            
+            div {
+                width: 65%;
+                margin: 0 auto 8em auto;
+            }
+            h3 {
+                font-size: 2em;
+            }
+            p {
+                padding-left: 5em;
+                padding-right: 14em;
+            }
+        }
+        section.commentsection {
+            margin-bottom: 10em;
+        }
+
         section.imgleft {
             background-color: @greyColor2;
             img {
@@ -692,7 +975,7 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
             top: 0;
         }
         .study-content {
-            button:hover {
+            .button:hover {
                 background-color: @greyColor4;
                 cursor: pointer;
             }
@@ -724,7 +1007,7 @@ The following CSS affects all screen sizes larger than 1024 pixels wide.
         section.needcreative {
             margin-top: -1em;
             margin-bottom: 3em;
-            button {
+            .button {
                 width: 20%;
                 height: 45px;
             }
